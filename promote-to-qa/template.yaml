@@ -8,15 +8,13 @@ spec:
   owner: platform-team
   type: automation
   parameters:
-    - title: Deploy Details
+    - title: Promote Details
       required: [repoUrl, tagName]
       properties:
         repoUrl:
           type: string
-          title: Repository URL
         tagName:
           type: string
-          title: Tag Name
   steps:
     - id: promote
       name: Promote to QA
