@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: promote-to-qa
   title: Promote to QA
-  description: Backstage template to promote main branch to QA by tagging it
+  description: Tags main branch to deploy to QA
 spec:
   type: automation
   owner: platform-team
