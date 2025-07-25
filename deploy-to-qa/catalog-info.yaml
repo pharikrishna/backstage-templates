@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: deploy-to-qa
+  title: Deploy to QA
+  description: Tag main branch for QA deployment
+spec:
+  type: automation
+  owner: platform-team
+  path: ./template.yaml
