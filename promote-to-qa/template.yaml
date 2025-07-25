@@ -13,8 +13,10 @@ spec:
       properties:
         repoUrl:
           type: string
+          title: Repository URL
         tagName:
           type: string
+          title: Tag Name
   steps:
     - id: promote
       name: Promote to QA
