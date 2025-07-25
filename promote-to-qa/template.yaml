@@ -3,23 +3,21 @@ kind: Template
 metadata:
   name: promote-to-qa
   title: Promote to QA
-  description: Tag the main branch for QA
+  description: Deploy main branch to QA environment
 spec:
   owner: platform-team
   type: automation
   parameters:
-    - title: Promote Build to QA
+    - title: Deploy Details
       required: [repoUrl, tagName]
       properties:
         repoUrl:
           type: string
-          title: Git repo URL
         tagName:
           type: string
-          title: Tag to create (e.g., main-30-07-2025-1)
   steps:
     - id: tag
-      name: Create QA Tag
+      name: Tag Main Branch
       action: custom:deploy-to-qa
       input:
         repoUrl: ${{ parameters.repoUrl }}
