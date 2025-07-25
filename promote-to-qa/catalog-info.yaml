@@ -1,27 +1,8 @@
-apiVersion: scaffolder.backstage.io/v1beta3
-kind: Template
+apiVersion: backstage.io/v1alpha1
+kind: Location
 metadata:
-  name: promote-to-qa
-  title: Promote to QA
-  description: Tag the main branch for QA deployment
+  name: promote-to-qa-template-location
+  description: Location for Promote to QA Template
 spec:
-  owner: platform-team
-  type: automation
-  parameters:
-    - title: Deploy Details
-      required: [repoUrl, tagName]
-      properties:
-        repoUrl:
-          type: string
-          title: Git Repo URL
-        tagName:
-          type: string
-          title: Tag to create (e.g., main-30-07-2025-1)
-  steps:
-    - id: promote
-      name: Promote to QA
-      action: custom:deploy-to-qa
-      input:
-        repoUrl: ${{ parameters.repoUrl }}
-        baseBranch: main
-        tagName: ${{ parameters.tagName }}
+  targets:
+    - ./template.yaml  # This is your actual template file
