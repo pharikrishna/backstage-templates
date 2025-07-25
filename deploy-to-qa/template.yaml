@@ -1,0 +1,27 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: deploy-to-qa
+  title: Deploy to QA
+  description: Tags the main branch for QA deployment
+spec:
+  owner: platform-team
+  type: automation
+  parameters:
+    - title: Deployment Info
+      required: [repoUrl, tagName]
+      properties:
+        repoUrl:
+          type: string
+          title: Git Repo URL
+        tagName:
+          type: string
+          title: Tag to create (e.g., main-24-07-2025-1)
+  steps:
+    - id: deploy
+      name: Deploy to QA
+      action: custom:deploy-to-qa
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        baseBranch: main
+        tagName: ${{ parameters.tagName }}
